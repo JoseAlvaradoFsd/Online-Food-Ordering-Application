@@ -1,0 +1,50 @@
+<!menu> 
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Silvia's Guatemalan Eats</title>
+    <script src=" https://cdn.tailwindscss.com"></script>    
+    </head>
+<body class="bg-black-50 text-white-800">
+    <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+        <h1 class=""text-2xl font bold text black-800>Silvia's Guatemalan Eats</h1>     
+        <ul class="flex space-x-6"></ul> 
+        <li><a href="index.html" class="hover:text-white-200">Home</a></li> 
+        <li><a href="menu.html" class="hover:text-white-200">Menu</a></li>
+        <li><a href="cart.html" class="hover:text-white-200">Cart</a></li>
+        <li><a href="profile.html" class="hover:text-white-200">Profile</a></li>
+    </ul>
+    </nav>      
+    <!menu grid>
+
+    <section class="p-6>
+        <h2 class="text-3xl font-bold mb-6 text-center" >Menu Items</h2>
+        <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols3 lg:grid-cols-1 sm:grid-cols-2 md:grid-cols3 gap-6">The flavors of Central America  
+
+
+</div>
+ </section>
+
+    <!JS sections go here>
+    <script type="module" src="js/renderMenu.js"></script>
+
+
+        
+        <!menu item example>
+        <div class="bg-white p-4 rounded shadow-md p-4">
+            <img src="images/tamales.jpg" alt="Tamales" class="w-full h-48 object-cover mb-4 rounded">
+            <h3 class="text-xl font-bold mb-2">Tamales</h3>
+            <p class="mb-2">A traditional Guatemalan tamale, steamed in a plantain leaf to enhance the flavor in every bite! Contains a rich flavorful recado, pork, red peppers, capers and a full jalapeno (upon request-limited supply). 
+                Comes with a side of black beans and a fresh pirujo, made in our bakery daily! </p>
+            <span class="font-bold">$9.99</span>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 ml-4">Add to Cart</button>
+
+        </div>
+        <!add more items here>
+        </div>
+    </section>  
+</body>  
+</html>
+

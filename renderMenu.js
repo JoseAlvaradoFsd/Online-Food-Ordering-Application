@@ -1,5 +1,7 @@
 //js/renderMenu.js
 import { menuItems } from './menudata.js';
+import { addToCart } from './cart.js';
+
 const menuGrid = document.querySelector("menuGrid");
 
 menuItems.forEach(item => {
@@ -14,4 +16,11 @@ menuItems.forEach(item => {
         `;
 
     menuGrid.appendChild(card);
+
+    //delegate button clicks 
+    menuGrid.addEventListener("click", (e) => {
+        if (e.target.tagName === "BUTTON") {
+            const itemId = parseInt(e.target.dataset.id);
+            addToCart(itemId);
+        }
 }); 

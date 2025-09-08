@@ -1,0 +1,14 @@
+// this is my checkout page js file
+
+<section class="p-6 max-w-xl mx-auto">
+  <h2 class="text-3xl font-bold mb-6 text-center">Checkout</h2>
+  <form id="checkout-form" class="space-y-4">
+    <input type="text" placeholder="Full Name" class="w-full p-2 border rounded" required />
+    <input type="email" placeholder="Email Address" class="w-full p-2 border rounded" required />
+    <input type="text" placeholder="Delivery Address" class="w-full p-2 border rounded" required />
+    <button type="submit" class="w-full bg-red-500 text-white py-2 rounded hover:bg-red-600">Place Order</button>
+  </form>
+  <div id="confirmation" class="mt-6 text-green-600 font-semibold hidden">Order placed successfully!</div>
+</section>
+
+<script type="module" src="js/checkout.js"></script>

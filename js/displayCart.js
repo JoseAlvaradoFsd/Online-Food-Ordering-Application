@@ -21,7 +21,11 @@ function renderCart() {
         itemDiv.innerHTML = `   
             <div>    
                 <h3 class="text-lg font-semibold">${menuItem.name}</h3>
-                <p class="text-gray-600">Quantity: ${cartItem.quantity}</p> 
+               <div class ="flex items-center gap-2 mt-2">
+               <button class="bg-gray-200 px-2 rounded" data-action="decrease" data-id="${cartItem.id}">-</button>    
+               <span>${cartItem.quantity}</span>    
+               <button class="bg-gray-200 px-2 rounded" data-action="increase" data-id="${cartItem.id}">+</button>    
+               </div>
                 <p class="text-black-500 font-bold">Price: $${itemTotal.toFixed(2)}</p>
             </div>
             <button class="bg-black-500 text-white px-3 py-1 rounded hover:bg-white-600" data-id"${cartItem.id}"Remove"</button>    
@@ -33,15 +37,22 @@ function renderCart() {
     //Removing item from cart
 
 cartItemsContainer.addEventListener("click", (e) => {   
-    if (e.target.tagName === "BUTTON") {    
-        const itemId = parseINT(e.target.dataset.id);
-        let cart = getCart();
-        cart = cart.filter(item => item.id =/= itemId);
-        saveCart(cart);
-        renderCart();    
-            
-    }    
-});
+    const action = e.target.dataset.action;
+    const itemId = parseInt(e.target.dataset.id);    
+    let cart = getCart();
 
+    const item = cart.find(i=> i.id == itemId);
+    if (!item) return;
+
+    if (action === "increase") {
+        item.quantity += 1;
+    } else if (action === "decrease") {
+        item.quantity = Math.max(1, item.quantity - 1);
+    }   else if (action === "remove") {
+        cart = cart.filter(i => i.id !== itemId);
+    }
+}
+saveCart(cart)
 renderCart();
-
+    });
+    
